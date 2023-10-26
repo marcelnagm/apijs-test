@@ -4,8 +4,10 @@ const route = express.Router();
 
 const HomeController = require('./controllers/HomeController');
 const FormsController = require('./controllers/FormsController');
+const checaParamMidleware = require('./middleware/ChecaParm');
 
-route.get('/', HomeController.paginaInicial);
+
+route.get('/',checaParamMidleware.checaParam ,HomeController.paginaInicial,);
 
 route.get('/testes/:idUser', function (req, res) {
     console.log(req.params);
