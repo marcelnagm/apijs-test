@@ -1,4 +1,5 @@
 exports.mostraForm = function (req, res) {
+    console.log(req.session.usuario);
     res.send ('<form method="POST" action="/process-form"><input  type="text" name="nome" > <input type="submit" value="vai!"></form>');
 }
 

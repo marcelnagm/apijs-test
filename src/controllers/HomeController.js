@@ -1,14 +1,15 @@
 
-const HomeModel = require('../models/HomeModel');
+// const HomeModel = require('../models/HomeModel');
 
-HomeModel.create({
-    titulo: 'teste bam bam',
-    descricao: 'pegaaaaa'
+// HomeModel.create({
+//     titulo: 'teste bam bam',
+//     descricao: 'pegaaaaa'
 
-}).then(dados => console.log(dados)).catch(e => console.log(e));
+// }).then(dados => console.log(dados)).catch(e => console.log(e));
 
 exports.paginaInicial = (req,res) => {
-
-    console.log(req.session.nome);
+    // req.session.usuario = 'teste';
+        console.log(req.session);
 res.render('index');
+// res.send('Deu certo');
 }

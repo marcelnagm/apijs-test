@@ -1,0 +1,22 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - ./data/db:/data/db
+    ports:
+      - "27017:27017"
+
+  adminmongo:
+    image: mrvautin/adminmongo
+    container_name: adminmongo
+    environment:
+      - AM_MONGODB_SERVER=mongodb
+      - AM_USER=admin
+      - AM_PASSWORD=example
+    ports:
+      - "1234:1234"

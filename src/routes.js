@@ -7,10 +7,15 @@ const FormsController = require('./controllers/FormsController');
 const checaParamMidleware = require('./middleware/ChecaParm');
 
 
-route.get('/',checaParamMidleware.checaParam ,HomeController.paginaInicial,);
+route.get('/',
+checaParamMidleware.checaParam ,
+HomeController.paginaInicial);
 
 route.get('/testes/:idUser', function (req, res) {
     console.log(req.params);
+    // req.session.save();
+    req.session.usuario = {usuario: 'Marce', id: req.params.idUser};
+
     res.send ('PEGAAAAAAAAAA');
 });
 
